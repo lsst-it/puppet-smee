@@ -12,6 +12,7 @@ describe 'smee class' do
 
         class { smee:
           url  => 'https://foo.example.org',
+          port => 1234,
         }
       PP
     end
@@ -29,7 +30,7 @@ describe 'smee class' do
       its(:group) { is_expected.to eq 'smee' }
       its(:args) { is_expected.to match %r{--url https://foo.example.org} }
       its(:args) { is_expected.to match %r{-P /payload} }
-      its(:args) { is_expected.to match %r{-p 8088} }
+      its(:args) { is_expected.to match %r{-p 1234} }
     end
     # rubocop:enable RSpec/RepeatedDescription
   end

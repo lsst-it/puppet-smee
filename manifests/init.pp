@@ -1,11 +1,15 @@
 # @summary
-#   Manage smee.io webhook daemon
+#   Manage smee.io webhook proxy service client
 #
 # @param url
 #   URL to the smee topic to watch for webhook events.
 #
+# @param port
+#   Local HTTP server port.
+#
 class smee (
   Stdlib::HTTPSUrl $url,
+  Integer $port = 3000,
 ) {
   $node_pkgs = [
     'rh-nodejs10',
@@ -50,7 +54,7 @@ class smee (
       /opt/rh/rh-nodejs10/root/usr/bin/smee \
       --url ${url} \
       -P /payload \
-      -p 8088
+      -p ${port}
     Restart=on-failure
     RestartSec=10
 
