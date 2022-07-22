@@ -61,6 +61,10 @@ class smee (
       -p ${port}
     Restart=on-failure
     RestartSec=10
+    PrivateTmp=yes
+    PrivateDevices=yes
+    ProtectSystem=yes
+    ProtectHome=yes
 
     [Install]
     WantedBy=default.target
