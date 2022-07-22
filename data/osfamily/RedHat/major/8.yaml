@@ -1,3 +1,4 @@
 ---
 smee::packages:
   - nodejs
+smee::binary: /usr/local/bin/smee

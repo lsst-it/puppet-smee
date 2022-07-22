@@ -2,3 +2,4 @@
 smee::packages:
   - rh-nodejs10
   - rh-nodejs10-npm
+smee::binary: /opt/rh/rh-nodejs10/root/usr/bin/smee

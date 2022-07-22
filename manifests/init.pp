@@ -7,6 +7,9 @@
 # @param packages
 #   URL to the smee topic to watch for webhook events.
 #
+# @param binary
+#   Path to smee client binary.
+#
 # @param path
 #   URL path to post proxied requests to.
 #
@@ -16,6 +19,7 @@
 class smee (
   Stdlib::HTTPSUrl $url,
   Array[String] $packages,
+  Stdlib::Absolutepath $binary,
   String $path = '/',
   Integer $port = 3000,
 ) {
@@ -35,7 +39,7 @@ class smee (
   }
 
   exec { 'install-smee':
-    creates   => '/opt/rh/rh-nodejs10/root/usr/bin/smee',
+    creates   => $binary,
     command   => 'npm install --global smee-client',
     subscribe => Package[$packages],
     path      => [
@@ -43,6 +47,11 @@ class smee (
       '/usr/sbin',
       '/usr/bin',
     ],
+  }
+
+  $exec_start = $facts['os']['release']['major'] ? {
+    '7'     => "/usr/bin/scl enable rh-nodejs10 -- ${binary}",
+    default => $binary,
   }
 
   $service_unit = @("EOT")
@@ -53,8 +62,7 @@ class smee (
     Type=simple
     User=smee
     Group=smee
-    ExecStart=/usr/bin/scl enable rh-nodejs10 -- \
-      /opt/rh/rh-nodejs10/root/usr/bin/smee \
+    ExecStart=${exec_start} \
       --url ${url} \
       -P ${path} \
       -p ${port}
