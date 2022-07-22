@@ -1,0 +1,4 @@
+---
+smee::packages:
+  - rh-nodejs10
+  - rh-nodejs10-npm

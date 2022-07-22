@@ -4,6 +4,9 @@
 # @param url
 #   URL to the smee topic to watch for webhook events.
 #
+# @param packages
+#   URL to the smee topic to watch for webhook events.
+#
 # @param path
 #   URL path to post proxied requests to.
 #
@@ -12,15 +15,11 @@
 #
 class smee (
   Stdlib::HTTPSUrl $url,
+  Array[String] $packages,
   String $path = '/',
   Integer $port = 3000,
 ) {
-  $node_pkgs = [
-    'rh-nodejs10',
-    'rh-nodejs10-npm',
-  ]
-
-  ensure_packages($node_pkgs)
+  ensure_packages($packages)
 
   group { 'smee':
     ensure => present,
@@ -38,7 +37,7 @@ class smee (
   exec { 'install-smee':
     creates   => '/opt/rh/rh-nodejs10/root/usr/bin/smee',
     command   => 'npm install --global smee-client',
-    subscribe => Package[$node_pkgs],
+    subscribe => Package[$packages],
     path      => [
       '/opt/rh/rh-nodejs10/root/usr/bin',
       '/usr/sbin',
