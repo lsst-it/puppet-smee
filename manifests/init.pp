@@ -4,11 +4,15 @@
 # @param url
 #   URL to the smee topic to watch for webhook events.
 #
+# @param path
+#   URL path to post proxied requests to.
+#
 # @param port
 #   Local HTTP server port.
 #
 class smee (
   Stdlib::HTTPSUrl $url,
+  String $path = '/',
   Integer $port = 3000,
 ) {
   $node_pkgs = [
@@ -53,7 +57,7 @@ class smee (
     ExecStart=/usr/bin/scl enable rh-nodejs10 -- \
       /opt/rh/rh-nodejs10/root/usr/bin/smee \
       --url ${url} \
-      -P /payload \
+      -P ${path} \
       -p ${port}
     Restart=on-failure
     RestartSec=10

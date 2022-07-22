@@ -12,6 +12,7 @@ describe 'smee class' do
 
         class { smee:
           url  => 'https://foo.example.org',
+          path => '/payload',
           port => 1234,
         }
       PP
