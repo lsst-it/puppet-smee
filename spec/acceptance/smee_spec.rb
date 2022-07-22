@@ -25,7 +25,8 @@ describe 'smee class' do
 
     # rubocop:disable RSpec/RepeatedDescription
     describe process('node') do
-      its(:user) { is_expected.to eq 'root' }
+      its(:user) { is_expected.to eq 'smee' }
+      its(:group) { is_expected.to eq 'smee' }
       its(:args) { is_expected.to match %r{--url https://foo.example.org} }
       its(:args) { is_expected.to match %r{-P /payload} }
       its(:args) { is_expected.to match %r{-p 8088} }

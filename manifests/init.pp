@@ -14,6 +14,19 @@ class smee (
 
   ensure_packages($node_pkgs)
 
+  group { 'smee':
+    ensure => present,
+    system => true,
+  }
+  -> user { 'smee':
+    ensure     => present,
+    gid        => 'smee',
+    home       => '/',
+    managehome => false,
+    shell      => '/sbin/nologin',
+    system     => true,
+  }
+
   exec { 'install-smee':
     creates   => '/opt/rh/rh-nodejs10/root/usr/bin/smee',
     command   => 'npm install --global smee-client',
@@ -31,6 +44,8 @@ class smee (
 
     [Service]
     Type=simple
+    User=smee
+    Group=smee
     ExecStart=/usr/bin/scl enable rh-nodejs10 -- \
       /opt/rh/rh-nodejs10/root/usr/bin/smee \
       --url ${url} \
@@ -49,5 +64,6 @@ class smee (
     content   => $service_unit,
     enable    => true,
     subscribe => Exec['install-smee'],
+    require   => User['smee'],
   }
 }
