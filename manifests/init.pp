@@ -1,5 +1,5 @@
 # @summary
-#   Manage smee.io webhook proxy service client
+#   Manages the smee.io webhook proxy service client
 #
 # @param url
 #   URL to the smee topic to watch for webhook events.
