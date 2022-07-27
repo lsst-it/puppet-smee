@@ -10,6 +10,9 @@
 # @param binary
 #   Path to smee client binary.
 #
+# @param exec_start
+#   Systemd `ExecStart` string.
+#
 # @param path
 #   URL path to post proxied requests to.
 #
@@ -20,6 +23,7 @@ class smee (
   Stdlib::HTTPSUrl $url,
   Array[String] $packages,
   Stdlib::Absolutepath $binary,
+  Stdlib::Absolutepath $exec_start,
   String $path = '/',
   Integer $port = 3000,
 ) {
@@ -43,15 +47,10 @@ class smee (
     command   => 'npm install --global smee-client',
     subscribe => Package[$packages],
     path      => [
-      '/opt/rh/rh-nodejs10/root/usr/bin',
+      '/opt/rh/rh-nodejs10/root/usr/bin',  # needed for EL7
       '/usr/sbin',
       '/usr/bin',
     ],
-  }
-
-  $exec_start = $facts['os']['release']['major'] ? {
-    '7'     => "/usr/bin/scl enable rh-nodejs10 -- ${binary}",
-    default => $binary,
   }
 
   $service_unit = @("EOT")
