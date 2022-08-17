@@ -4,7 +4,7 @@ require 'spec_helper_acceptance'
 
 describe 'smee class' do
   context 'with url' do
-    let(:pp) do
+    let(:manifest) do
       <<-PP
         if versioncmp($facts['os']['release']['major'],'7') <= 0 {
           class { scl: } -> Class['smee']
