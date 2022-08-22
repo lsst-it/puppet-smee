@@ -22,6 +22,6 @@ describe 'smee' do
 
         it { is_expected.to compile.with_all_deps }
       end
-    end # context "on #{os}" do
-  end # on_supported_os.each do |os, facts|
+    end
+  end
 end

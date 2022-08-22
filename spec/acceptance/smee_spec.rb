@@ -4,7 +4,7 @@ require 'spec_helper_acceptance'
 
 describe 'smee class' do
   context 'with url' do
-    let(:pp) do
+    let(:manifest) do
       <<-PP
         if versioncmp($facts['os']['release']['major'],'7') <= 0 {
           class { scl: } -> Class['smee']
@@ -25,7 +25,6 @@ describe 'smee class' do
       it { is_expected.to be_running }
     end
 
-    # rubocop:disable RSpec/RepeatedDescription
     describe process('node') do
       its(:user) { is_expected.to eq 'smee' }
       its(:group) { is_expected.to eq 'smee' }
@@ -33,6 +32,5 @@ describe 'smee class' do
       its(:args) { is_expected.to match %r{-P /payload} }
       its(:args) { is_expected.to match %r{-p 1234} }
     end
-    # rubocop:enable RSpec/RepeatedDescription
   end
 end
