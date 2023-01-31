@@ -18,38 +18,38 @@ Manages the smee.io webhook proxy service client
 
 The following parameters are available in the `smee` class:
 
-* [`url`](#url)
-* [`packages`](#packages)
-* [`binary`](#binary)
-* [`exec_start`](#exec_start)
-* [`path`](#path)
-* [`port`](#port)
+* [`url`](#-smee--url)
+* [`packages`](#-smee--packages)
+* [`binary`](#-smee--binary)
+* [`exec_start`](#-smee--exec_start)
+* [`path`](#-smee--path)
+* [`port`](#-smee--port)
 
-##### <a name="url"></a>`url`
+##### <a name="-smee--url"></a>`url`
 
 Data type: `Stdlib::HTTPSUrl`
 
 URL to the smee topic to watch for webhook events.
 
-##### <a name="packages"></a>`packages`
+##### <a name="-smee--packages"></a>`packages`
 
 Data type: `Array[String]`
 
 URL to the smee topic to watch for webhook events.
 
-##### <a name="binary"></a>`binary`
+##### <a name="-smee--binary"></a>`binary`
 
 Data type: `Stdlib::Absolutepath`
 
 Path to smee client binary.
 
-##### <a name="exec_start"></a>`exec_start`
+##### <a name="-smee--exec_start"></a>`exec_start`
 
 Data type: `Stdlib::Absolutepath`
 
 Systemd `ExecStart` string.
 
-##### <a name="path"></a>`path`
+##### <a name="-smee--path"></a>`path`
 
 Data type: `String`
 
@@ -57,7 +57,7 @@ URL path to post proxied requests to.
 
 Default value: `'/'`
 
-##### <a name="port"></a>`port`
+##### <a name="-smee--port"></a>`port`
 
 Data type: `Integer`
 

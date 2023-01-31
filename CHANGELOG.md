@@ -1,8 +1,29 @@
 # Changelog
 
-## [Unreleased](https://github.com/lsst-it/puppet-smee/tree/HEAD)
+All notable changes to this project will be documented in this file.
+Each new release typically also includes the latest modulesync defaults.
+These should not affect the functionality of the module.
 
-[Full Changelog](https://github.com/lsst-it/puppet-smee/compare/d29c12c679cbe7719e843219bef5c3861c733740...HEAD)
+## [v1.2.0](https://github.com/lsst-it/puppet-smee/tree/v1.2.0) (2023-01-30)
+
+[Full Changelog](https://github.com/lsst-it/puppet-smee/compare/v1.1.0...v1.2.0)
+
+**Implemented enhancements:**
+
+- normalize supported operating systems [\#7](https://github.com/lsst-it/puppet-smee/pull/7) ([jhoblitt](https://github.com/jhoblitt))
+- bump puppet/systemd to \< 5.0.0 [\#5](https://github.com/lsst-it/puppet-smee/pull/5) ([jhoblitt](https://github.com/jhoblitt))
+
+## [v1.1.0](https://github.com/lsst-it/puppet-smee/tree/v1.1.0) (2022-08-22)
+
+[Full Changelog](https://github.com/lsst-it/puppet-smee/compare/v1.0.0...v1.1.0)
+
+**Merged pull requests:**
+
+- modulesync 5.3.0 [\#3](https://github.com/lsst-it/puppet-smee/pull/3) ([jhoblitt](https://github.com/jhoblitt))
+
+## [v1.0.0](https://github.com/lsst-it/puppet-smee/tree/v1.0.0) (2022-08-04)
+
+[Full Changelog](https://github.com/lsst-it/puppet-smee/compare/d29c12c679cbe7719e843219bef5c3861c733740...v1.0.0)
 
 **Merged pull requests:**
 
