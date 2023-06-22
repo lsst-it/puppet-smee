@@ -41,6 +41,4 @@ task test_with_coveralls: [:test] do
   end
 end
 
-task :beaker => "spec_prep"
-
 # vim: syntax=ruby
