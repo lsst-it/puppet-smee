@@ -4,7 +4,9 @@
   - parameter_documentation
   - parameter_types
 spec/spec_helper_acceptance.rb:
-  unmanaged: false
+  unmanaged: true
+Rakefile:
+  unmanaged: true
 ".github/CONTRIBUTING.md":
   delete: true
 ".github/ISSUE_TEMPLATE.md":
@@ -21,3 +23,5 @@ Gemfile:
     - gem: puppet-lint-strict_indent-check
     - gem: puppet-lint-unquoted_string-check
     - gem: puppet-lint-variable_contains_upcase
+    ":system_tests":
+    - gem: puppetlabs_spec_helper
