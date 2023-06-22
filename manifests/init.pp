@@ -27,7 +27,7 @@ class smee (
   String $path = '/',
   Integer $port = 3000,
 ) {
-  ensure_packages($packages)
+  stdlib::ensure_packages($packages)
 
   group { 'smee':
     ensure => present,
