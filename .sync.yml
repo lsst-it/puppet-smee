@@ -4,9 +4,9 @@
   - parameter_documentation
   - parameter_types
 spec/spec_helper_acceptance.rb:
-  unmanaged: true
-Rakefile:
-  unmanaged: true
+  unmanaged: false
+  configure_beaker:
+    modules: ":fixtures"
 ".github/CONTRIBUTING.md":
   delete: true
 ".github/ISSUE_TEMPLATE.md":
