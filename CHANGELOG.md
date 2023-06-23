@@ -4,7 +4,19 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
-## [v1.2.0](https://github.com/lsst-it/puppet-smee/tree/v1.2.0) (2023-01-30)
+## [v2.0.0](https://github.com/lsst-it/puppet-smee/tree/v2.0.0) (2023-06-23)
+
+[Full Changelog](https://github.com/lsst-it/puppet-smee/compare/v1.2.0...v2.0.0)
+
+**Breaking changes:**
+
+- \(plumbing\) drop support for puppet6 [\#11](https://github.com/lsst-it/puppet-smee/pull/11) ([jhoblitt](https://github.com/jhoblitt))
+
+**Implemented enhancements:**
+
+- add support for puppet8 [\#12](https://github.com/lsst-it/puppet-smee/pull/12) ([jhoblitt](https://github.com/jhoblitt))
+
+## [v1.2.0](https://github.com/lsst-it/puppet-smee/tree/v1.2.0) (2023-01-31)
 
 [Full Changelog](https://github.com/lsst-it/puppet-smee/compare/v1.1.0...v1.2.0)
 
