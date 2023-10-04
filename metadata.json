@@ -1,6 +1,6 @@
 {
   "name": "lsst-smee",
-  "version": "2.1.1-rc0",
+  "version": "2.2.0",
   "author": "AURA/LSST/Rubin Observatory",
   "summary": "Manages the smee.io webhook proxy service client",
   "license": "Apache-2.0",
