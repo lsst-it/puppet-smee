@@ -19,6 +19,9 @@
 # @param port
 #   Local HTTP server port.
 #
+# @param version
+#   Version of the smee-client package to install.
+#
 class smee (
   Stdlib::HTTPSUrl $url,
   Array[String] $packages,
@@ -26,6 +29,7 @@ class smee (
   Stdlib::Absolutepath $exec_start,
   String $path = '/',
   Integer $port = 3000,
+  String $version = '2.0.0',
 ) {
   ensure_packages($packages)
 
@@ -44,7 +48,7 @@ class smee (
 
   exec { 'install-smee':
     creates   => $binary,
-    command   => 'npm install --global smee-client',
+    command   => "npm install --global smee-client@${version}",
     subscribe => Package[$packages],
     path      => [
       '/opt/rh/rh-nodejs10/root/usr/bin',  # needed for EL7

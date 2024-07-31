@@ -24,6 +24,7 @@ The following parameters are available in the `smee` class:
 * [`exec_start`](#-smee--exec_start)
 * [`path`](#-smee--path)
 * [`port`](#-smee--port)
+* [`version`](#-smee--version)
 
 ##### <a name="-smee--url"></a>`url`
 
@@ -64,4 +65,12 @@ Data type: `Integer`
 Local HTTP server port.
 
 Default value: `3000`
+
+##### <a name="-smee--version"></a>`version`
+
+Data type: `String`
+
+Version of the smee-client package to install.
+
+Default value: `'2.0.0'`
 
