@@ -31,7 +31,7 @@ class smee (
   Integer $port = 3000,
   String $version = '2.0.0',
 ) {
-  ensure_packages($packages)
+  stdlib::ensure_packages($packages)
 
   group { 'smee':
     ensure => present,
