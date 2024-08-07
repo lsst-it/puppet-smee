@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v2.3.0](https://github.com/lsst-it/puppet-smee/tree/v2.3.0) (2024-08-07)
+
+[Full Changelog](https://github.com/lsst-it/puppet-smee/compare/v2.2.0...v2.3.0)
+
+**Implemented enhancements:**
+
+- allow puppet/systemd 7.x [\#27](https://github.com/lsst-it/puppet-smee/pull/27) ([jhoblitt](https://github.com/jhoblitt))
+- add version param [\#26](https://github.com/lsst-it/puppet-smee/pull/26) ([jhoblitt](https://github.com/jhoblitt))
+- \(puppet\_smee\) add license file [\#24](https://github.com/lsst-it/puppet-smee/pull/24) ([dtapiacl](https://github.com/dtapiacl))
+
 ## [v2.2.0](https://github.com/lsst-it/puppet-smee/tree/v2.2.0) (2023-10-04)
 
 [Full Changelog](https://github.com/lsst-it/puppet-smee/compare/v2.1.0...v2.2.0)
