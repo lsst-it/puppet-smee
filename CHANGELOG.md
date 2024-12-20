@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v2.4.0](https://github.com/lsst-it/puppet-smee/tree/v2.4.0) (2024-12-20)
+
+[Full Changelog](https://github.com/lsst-it/puppet-smee/compare/v2.3.0...v2.4.0)
+
+**Implemented enhancements:**
+
+- \(metadata.json\) Update systemd to v8 [\#33](https://github.com/lsst-it/puppet-smee/pull/33) ([badenerb](https://github.com/badenerb))
+
 ## [v2.3.0](https://github.com/lsst-it/puppet-smee/tree/v2.3.0) (2024-08-07)
 
 [Full Changelog](https://github.com/lsst-it/puppet-smee/compare/v2.2.0...v2.3.0)
