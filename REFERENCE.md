@@ -6,49 +6,28 @@
 
 ### Classes
 
-* [`smee`](#smee): Manages the smee.io webhook proxy service client
+* [`smee`](#smee)
 
 ## Classes
 
 ### <a name="smee"></a>`smee`
 
-Manages the smee.io webhook proxy service client
+The smee class.
 
 #### Parameters
 
 The following parameters are available in the `smee` class:
 
 * [`url`](#-smee--url)
-* [`packages`](#-smee--packages)
-* [`binary`](#-smee--binary)
-* [`exec_start`](#-smee--exec_start)
 * [`path`](#-smee--path)
 * [`port`](#-smee--port)
-* [`version`](#-smee--version)
+* [`image`](#-smee--image)
 
 ##### <a name="-smee--url"></a>`url`
 
 Data type: `Stdlib::HTTPSUrl`
 
 URL to the smee topic to watch for webhook events.
-
-##### <a name="-smee--packages"></a>`packages`
-
-Data type: `Array[String]`
-
-URL to the smee topic to watch for webhook events.
-
-##### <a name="-smee--binary"></a>`binary`
-
-Data type: `Stdlib::Absolutepath`
-
-Path to smee client binary.
-
-##### <a name="-smee--exec_start"></a>`exec_start`
-
-Data type: `Stdlib::Absolutepath`
-
-Systemd `ExecStart` string.
 
 ##### <a name="-smee--path"></a>`path`
 
@@ -66,11 +45,9 @@ Local HTTP server port.
 
 Default value: `3000`
 
-##### <a name="-smee--version"></a>`version`
+##### <a name="-smee--image"></a>`image`
 
-Data type: `String`
+Data type: `String[1]`
 
-Version of the smee-client package to install.
 
-Default value: `'2.0.0'`
 

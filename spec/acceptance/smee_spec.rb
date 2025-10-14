@@ -3,30 +3,26 @@
 require 'spec_helper_acceptance'
 
 describe 'smee class' do
-  context 'with url' do
-    let(:manifest) do
-      <<-PP
-        class { smee:
-          url  => 'https://foo.example.org',
-          path => '/payload',
-          port => 1234,
-        }
-      PP
-    end
+  shell('dnf install -y podman-docker') # used by serverspec
 
-    it_behaves_like 'an idempotent resource'
+  include_examples 'the example', 'smee.pp'
 
-    describe service('smee') do
-      it { is_expected.to be_enabled }
-      it { is_expected.to be_running }
-    end
+  it_behaves_like 'an idempotent resource'
 
-    describe process('node') do
-      its(:user) { is_expected.to eq 'smee' }
-      its(:group) { is_expected.to eq 'smee' }
-      its(:args) { is_expected.to match %r{--url https://foo.example.org} }
-      its(:args) { is_expected.to match %r{-P /payload} }
-      its(:args) { is_expected.to match %r{-p 1234} }
-    end
+  describe service('smee') do
+    it { is_expected.to be_enabled }
+    it { is_expected.to be_running }
+  end
+
+  describe docker_container('systemd-smee') do
+    its(['Config.Image']) { is_expected.to eq 'ghcr.io/lsst-it/smee-client:4.3.1' }
+    its(['Config.User']) { is_expected.to eq '65534:65534' }
+    its(['HostConfig.NetworkMode']) { is_expected.to eq 'host' }
+    its(['Args']) { is_expected.to include('--url') }
+    its(['Args']) { is_expected.to include('https://smee.io/WfmVJamW8LnOgVy') }
+    its(['Args']) { is_expected.to include('--path') }
+    its(['Args']) { is_expected.to include('/payload') }
+    its(['Args']) { is_expected.to include('--port') }
+    its(['Args']) { is_expected.to include('1234') }
   end
 end

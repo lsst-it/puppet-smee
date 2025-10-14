@@ -5,14 +5,19 @@
   "summary": "Manages the smee.io webhook proxy service client",
   "license": "Apache-2.0",
   "source": "https://github.com/lsst-it/puppet-smee",
+  "tags": [
+    "proxy",
+    "smee",
+    "webhook"
+  ],
   "dependencies": [
     {
       "name": "puppetlabs/stdlib",
       "version_requirement": ">= 9.0.0 < 10.0.0"
     },
     {
-      "name": "puppet/systemd",
-      "version_requirement": ">= 3.0.0 < 9.0.0"
+      "name": "puppet/quadlets",
+      "version_requirement": ">= 2.0.0 < 3.0.0"
     }
   ],
   "operatingsystem_support": [
