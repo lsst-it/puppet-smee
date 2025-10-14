@@ -6,10 +6,6 @@ describe 'smee class' do
   context 'with url' do
     let(:manifest) do
       <<-PP
-        if versioncmp($facts['os']['release']['major'],'7') <= 0 {
-          class { scl: } -> Class['smee']
-        }
-
         class { smee:
           url  => 'https://foo.example.org',
           path => '/payload',

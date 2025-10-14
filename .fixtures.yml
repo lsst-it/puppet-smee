@@ -5,7 +5,3 @@ fixtures:
   forge_modules:
     stdlib: "puppetlabs/stdlib"
     systemd: "puppet/systemd"
-  repositories:
-    scl:
-      repo: "https://github.com/lsst-it/puppet-scl"
-      branch: "production"
