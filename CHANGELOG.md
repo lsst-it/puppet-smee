@@ -4,7 +4,17 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
-## [v2.4.0](https://github.com/lsst-it/puppet-smee/tree/v2.4.0) (2024-12-20)
+## [v3.0.0](https://github.com/lsst-it/puppet-smee/tree/v3.0.0) (2025-10-15)
+
+[Full Changelog](https://github.com/lsst-it/puppet-smee/compare/v2.4.0...v3.0.0)
+
+**Breaking changes:**
+
+- convert deployment to use quadlets [\#49](https://github.com/lsst-it/puppet-smee/pull/49) ([jhoblitt](https://github.com/jhoblitt))
+- drop support for centos7 & alamalinux8 [\#48](https://github.com/lsst-it/puppet-smee/pull/48) ([jhoblitt](https://github.com/jhoblitt))
+- drop support for puppet7 [\#47](https://github.com/lsst-it/puppet-smee/pull/47) ([jhoblitt](https://github.com/jhoblitt))
+
+## [v2.4.0](https://github.com/lsst-it/puppet-smee/tree/v2.4.0) (2024-12-21)
 
 [Full Changelog](https://github.com/lsst-it/puppet-smee/compare/v2.3.0...v2.4.0)
 
