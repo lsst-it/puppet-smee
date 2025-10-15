@@ -1,5 +1,0 @@
----
-smee::packages:
-  - nodejs
-smee::binary: /usr/local/bin/smee
-smee::exec_start: "%{lookup('smee::binary')}"

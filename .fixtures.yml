@@ -4,4 +4,5 @@
 fixtures:
   forge_modules:
     stdlib: "puppetlabs/stdlib"
+    quadlets: "puppet/quadlets"
     systemd: "puppet/systemd"

@@ -1,1 +1,2 @@
---- {}
+---
+smee::image: ghcr.io/lsst-it/smee-client:4.3.1
